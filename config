@@ -1,0 +1,441 @@
+ForwardX11 yes
+ServerAliveInterval 15
+#AddKeysToAgent yes
+#UseKeychain yes
+
+host github.com
+    identityFile ~/.ssh/inl_rsa
+
+host sh.wide.ad.jp
+    identityFile ~/.ssh/inl_rsa
+
+# Home
+host mbp
+    hostname kazuki-no-mbp
+    user kazuki
+    identityfile ~/.ssh/home_rsa
+
+host mgmg
+    #hostname 192.168.2.2
+    hostname 192.168.1.50
+    user kazuki
+    port 19222
+    identityfile ~/.ssh/home_rsa
+
+host meme
+    hostname 2001:200:0:6820::158
+    user kazuki
+    port 19222
+    identityfile ~/.ssh/inl_rsa
+
+host meme4
+    hostname 203.178.135.158
+    user kazuki
+    port 19222
+    identityfile ~/.ssh/inl_rsa
+
+host mary
+    hostname mary.local
+    user kazuki
+    identityfile ~/.ssh/home_rsa
+
+# Keio
+host keio
+    hostname logex00.educ.cc.keio.ac.jp
+    user ua040762
+    identityfile ~/.ssh/inl_rsa
+
+# ICS Root
+host ics-web
+    hostname 18.218.67.71
+    user ubuntu
+    identityfile ~/.ssh/inl_rsa
+
+host growi
+    hostname 18.188.195.107
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host recruit
+    hostname recruit.ics.keio.ac.jp
+    user ec2-user
+    identityfile ~/.ssh/inl_rsa
+
+# Jump Servers
+host imac
+    hostname 131.113.71.75
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p pc6
+
+host jump
+    hostname 131.113.71.157
+    user vagrant 
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cmgr2
+
+host cmgr
+    hostname 203.178.135.142
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p pc6
+
+host cmgr2
+    hostname cmgr2.inl.ics.keio.ac.jp
+    #hostname 131.113.71.154
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    ForwardAgent yes
+
+# Experiment
+host vnode1
+    hostname 131.113.71.169
+    user ubuntu
+    identityfile ~/.ssh/inl_rsa
+
+host test1
+    hostname 131.113.71.201
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host jedi
+    hostname jedi.inl.ics.keio.ac.jp
+    user gordon 
+    identityfile ~/.ssh/inl_rsa
+
+host anakin
+    hostname anakin.inl.ics.keio.ac.jp
+    user gordon 
+    identityfile ~/.ssh/inl_rsa
+
+host d1
+    hostname 2001:200:0:6811::d1
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host d2
+    hostname 2001:200:0:6811::d2
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host d3
+    hostname 2001:200:0:6811::d3
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host d4
+    hostname 2001:200:0:6811::d4
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host d5
+    hostname 2001:200:0:6811::d5
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host d6
+    hostname 2001:200:0:6811::d6
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+# NEC
+host nec
+    hostname nec-project.inl.ics.keio.ac.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host gw01
+    hostname 131.113.71.85
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host gw02
+    hostname 172.20.1.2
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p nec
+
+host gw03
+    hostname 172.20.1.3
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p nec
+
+host gw04
+    hostname 172.20.1.4
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p nec
+
+host gw05
+    hostname 172.20.1.5
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p nec
+
+# Service
+host domino
+    hostname domino.inl.ics.keio.ac.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host pizzahut
+    hostname pizzahut.inl.ics.keio.ac.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host cheese
+    hostname cheese.inl.ics.keio.ac.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host tomato
+    hostname tomato.inl.ics.keio.ac.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host wish
+    hostname wish.inl.ics.keio.ac.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host great
+    hostname great.inl.ics.keio.ac.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host ns
+    hostname ns.inl.ics.keio.ac.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host ns2
+    hostname 131.113.71.155
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+# Switch
+host cisco3
+    hostname 192.168.10.100
+    user wide
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -l gordon -W %h:%p pc6
+    KexAlgorithms +diffie-hellman-group1-sha1
+    Ciphers aes256-cbc
+
+# WIDE
+host pc4
+    hostname pc4.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host pc5
+    hostname pc5.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host pc6
+    hostname pc6.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host vtep1
+    hostname vtep1.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host vm1
+    hostname vm1.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host sh
+    hostname sh.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host two
+    hostname two.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host monitor
+    hostname monitor.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+# Virtual Blade Servers on reef
+host vblade-01
+    hostname 131.113.71.210
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+ 
+host vblade-03
+    hostname 131.113.71.203
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+ 
+host vblade-04
+    hostname 131.113.71.204
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+ 
+host vblade-06
+    hostname 131.113.71.206
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+ 
+# Blade Servers
+host blade-01
+    hostname blade-01.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+ 
+host blade-02
+    hostname blade-02.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-03
+    hostname blade-03.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    
+host blade-04
+    hostname blade-04.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-05
+    hostname blade-05.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    
+host blade-06
+    hostname blade-06.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-07
+    hostname blade-07.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-08
+    hostname blade-08.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-09
+    hostname blade-09.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-10
+    hostname blade-10.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-11
+    hostname blade-11.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-12
+    hostname blade-12.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-13
+    hostname blade-13.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-14
+    hostname blade-14.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-15
+    hostname blade-15.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+host blade-16
+    hostname blade-16.yagami.wide.ad.jp
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+
+# DMC
+host abilene01
+    hostname 10.58.60.1
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene02
+    hostname 10.58.60.2
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene03
+    hostname 10.58.60.3
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene04
+    hostname 10.58.60.4
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene05
+    hostname 10.58.60.5
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene06
+    hostname 10.58.60.6
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene07
+    hostname 10.58.60.7
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene08
+    hostname 10.58.60.8
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene09
+    hostname 10.58.60.9
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene10
+    hostname 10.58.60.10
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene11
+    hostname 10.58.60.11
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
+host abilene12
+    hostname 10.58.60.12
+    user gordon
+    identityfile ~/.ssh/inl_rsa
+    proxycommand ssh -W %h:%p cheese
+
