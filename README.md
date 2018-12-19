@@ -16,12 +16,12 @@ $ ln -sf ~/Documents/dotfiles/config ~/.ssh/config
 $ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ```
 
-1. Personalized Config
+### 1. Personalized Config
 ```
 $ ~/.bash_it/install.sh --no-modify-config
 ```
 
-2. Default Config
+### 2. Default Config
 ```
 $ ~/.bash_it/install.sh
 $ vi ~/.bash_profile
