@@ -14,8 +14,12 @@ PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 if [ -d $HOME/bin ] ; then
     PATH=$HOME/bin:$PATH
 fi
+if [ -d /Applications/CPLEX_Studio_Community129/cplex/bin/x86-64_osx ] ; then
+    PATH=$PATH:/Applications/CPLEX_Studio_Community129/cplex/bin/x86-64_osx
+fi
 export PATH
-eval "$(jenv init -)"
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+#eval "$(jenv init -)"
 #export ANDROID_HOME=/usr/local/share/android-sdk
 
 # Load .bashrc
@@ -23,9 +27,16 @@ if [ -f $HOME/.bashrc ] ; then
     . $HOME/.bashrc
 fi
 
+# bash-completion 
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
 # git-completion
-source /usr/local/etc/bash_completion.d/git-prompt.sh
-source /usr/local/etc/bash_completion.d/git-completion.bash
+if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ] ; then
+    source /usr/local/etc/bash_completion.d/git-prompt.sh
+fi
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ] ; then
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
 
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH=/Users/kazuki/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
@@ -47,9 +58,7 @@ alias mv='mv -i'
 alias rm='trash -r'
 alias wakeup-1f='wakeonlan 00:16:d3:dc:bb:3f'
 alias wakeup-2f='wakeonlan 00:17:42:fd:63:7d'
-alias firefox='ssh -4 -D 1080 gordon@cheese'
-alias mgmg2meme='scp -r mgmg:/home/kazuki/minecraft/worlds/01 /tmp/mc-world && scp -r /tmp/mc-world meme:/home/kazuki/minecraft/worlds/01 && rm -rf /tmp/mc-world'
-alias meme2mgmg='scp -r meme:/home/kazuki/minecraft/worlds/01 /tmp/mc-world && scp -r /tmp/mc-world mgmg:/home/kazuki/minecraft/worlds/01 && rm -rf /tmp/mc-world'
+alias telnet-hayabusa='ssh pc6 telnet 192.168.10.1'
 #alias v4mtr='sudo mtr -n 8.8.8.8'
 #alias v6mtr='sudo mtr -n -i 0.1 2001:4860:4860::8888'
 
