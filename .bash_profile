@@ -58,9 +58,8 @@ alias mv='mv -i'
 alias rm='trash -r'
 alias wakeup-1f='wakeonlan 00:16:d3:dc:bb:3f'
 alias wakeup-2f='wakeonlan 00:17:42:fd:63:7d'
-alias telnet-hayabusa='ssh pc6 telnet 192.168.10.1'
-#alias v4mtr='sudo mtr -n 8.8.8.8'
-#alias v6mtr='sudo mtr -n -i 0.1 2001:4860:4860::8888'
+alias v4mtr='sudo mtr -n 8.8.8.8'
+alias v6mtr='sudo mtr -n 2001:4860:4860::8888'
 
 
 # Path to the bash it configuration

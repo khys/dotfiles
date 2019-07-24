@@ -201,6 +201,11 @@ Host sizu1
     User gordon
     IdentityFile ~/.ssh/inl_rsa
 
+Host sizu2
+    HostName 131.113.71.242
+    User gordon
+    IdentityFile ~/.ssh/inl_rsa
+
 Host vnode1
     HostName 131.113.71.169
     User ubuntu
@@ -216,11 +221,26 @@ Host simula
     User gordon 
     IdentityFile ~/.ssh/inl_rsa
 
+Host pxe
+    HostName 131.113.71.196
+    User gordon 
+    IdentityFile ~/.ssh/inl_rsa
+
 Host reef
     HostName reef.inl.ics.keio.ac.jp
     User gordon 
     IdentityFile ~/.ssh/inl_rsa
     ProxyCommand ssh -W %h:%p simula
+
+Host coral
+    HostName coral.inl.ics.keio.ac.jp
+    User gordon 
+    IdentityFile ~/.ssh/inl_rsa
+
+Host coral14
+    HostName coral.inl.ics.keio.ac.jp
+    User gordon 
+    IdentityFile ~/.ssh/inl_rsa
 
 Host fwd-simula
     HostName simula.inl.ics.keio.ac.jp
@@ -433,6 +453,7 @@ Host pc6
     HostName pc6.yagami.wide.ad.jp
     User gordon
     IdentityFile ~/.ssh/inl_rsa
+    ForwardAgent yes
 
 Host fwd-pc6
     HostName pc6.yagami.wide.ad.jp
@@ -603,6 +624,18 @@ Host blade-16
     IdentityFile ~/.ssh/inl_rsa
 
 # DMC
+Host oifrt1
+    HostName 10.58.60.16
+    User gordon
+    IdentityFile ~/.ssh/inl_rsa
+    ProxyCommand ssh -W %h:%p cheese
+
+Host oifrt2
+    HostName 10.58.60.17
+    User gordon
+    IdentityFile ~/.ssh/inl_rsa
+    ProxyCommand ssh -W %h:%p cheese
+
 Host abilene01
     HostName 10.58.60.1
     User gordon
