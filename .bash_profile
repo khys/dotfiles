@@ -18,9 +18,8 @@ if [ -d /Applications/CPLEX_Studio_Community129/cplex/bin/x86-64_osx ] ; then
     PATH=$PATH:/Applications/CPLEX_Studio_Community129/cplex/bin/x86-64_osx
 fi
 export PATH
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-#eval "$(jenv init -)"
-#export ANDROID_HOME=/usr/local/share/android-sdk
+if which jenv &> /dev/null; then eval "$(jenv init -)"; fi
+if which trash &> /dev/null; then alias rm='trash -r'; fi
 
 # Load .bashrc
 if [ -f $HOME/.bashrc ] ; then
@@ -38,24 +37,18 @@ if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ] ; then
     source /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
-# heroku autocomplete setup
-HEROKU_AC_BASH_SETUP_PATH=/Users/kazuki/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
-
-# pyenv
-#export PYENV_ROOT=/usr/local/var/pyenv
-#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-#alias brew="env PATH=${PATH/\/usr\/local\/var\/pyenv\/shims:/} brew"
-
 # Virtualenvwrapper
 if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
     source /usr/local/bin/virtualenvwrapper.sh
     export WORKON_HOME=~/.virtualenvs
 fi
 
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH=/Users/kazuki/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
+
 # alias
 alias cp='cp -aip'
 alias mv='mv -i'
-alias rm='trash -r'
 alias wakeup-1f='wakeonlan 00:16:d3:dc:bb:3f'
 alias wakeup-2f='wakeonlan 00:17:42:fd:63:7d'
 alias v4mtr='sudo mtr -n 8.8.8.8'
