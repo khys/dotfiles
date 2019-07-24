@@ -417,8 +417,8 @@ Host c3
     User wide
     IdentityFile ~/.ssh/inl_rsa
     ProxyCommand ssh -l gordon -W %h:%p pc6
-    KexAlgorithms +diffie-hellman-group1-sha1
-    Ciphers aes256-cbc
+    #KexAlgorithms +diffie-hellman-group1-sha1
+    #Ciphers aes256-cbc
 
 Host j1
     HostName juniper1.yagami.wide.ad.jp
