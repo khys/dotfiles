@@ -13,7 +13,7 @@ $ ln -sf ~/Documents/dotfiles/config ~/.ssh/config
 
 ## Bash-it
 ```
-$ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+$ git clone --depth=1 git@github.com:Bash-it/bash-it.git ~/.bash_it
 ```
 
 - Personalized Config
