@@ -27,3 +27,8 @@ $ ~/.bash_it/install.sh
 $ vi ~/.bash_profile
     export BASH_IT_THEME='pure'
 ```
+
+## Tmux Plugin Manager
+```
+$ git clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm
+```
