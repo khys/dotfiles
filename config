@@ -220,6 +220,7 @@ Host simula
     HostName simula.inl.ics.keio.ac.jp
     User gordon 
     IdentityFile ~/.ssh/inl_rsa
+    ForwardAgent yes
 
 Host pxe
     HostName 131.113.71.196
