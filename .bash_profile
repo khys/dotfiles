@@ -1,4 +1,5 @@
 # bash_profile
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Language
 export LANG=ja_JP.UTF-8
@@ -14,7 +15,9 @@ PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 if [ -d $HOME/bin ] ; then
     PATH=$HOME/bin:$PATH
 fi
-if [ -d /Applications/CPLEX_Studio_Community129/cplex/bin/x86-64_osx ] ; then
+if [ -d /Applications/CPLEX_Studio129/cplex/bin/x86-64_osx ] ; then
+    PATH=$PATH:/Applications/CPLEX_Studio129/cplex/bin/x86-64_osx
+elif [ -d /Applications/CPLEX_Studio_Community129/cplex/bin/x86-64_osx ] ; then
     PATH=$PATH:/Applications/CPLEX_Studio_Community129/cplex/bin/x86-64_osx
 fi
 export PATH
@@ -39,8 +42,15 @@ fi
 
 # Virtualenvwrapper
 if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     source /usr/local/bin/virtualenvwrapper.sh
     export WORKON_HOME=~/.virtualenvs
+fi
+
+# google-cloud-sdk
+if [ -f /usr/local/Caskroom/google-cloud-sdk ] ; then
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
 fi
 
 # heroku autocomplete setup
