@@ -19,25 +19,12 @@ Host mbp
     User kazuki
     IdentityFile ~/.ssh/home_ed25519
 
-Host fwd-mbp
-    HostName 240d:1a:2:5d00:192:168:1:2
-    User kazuki
-    IdentityFile ~/.ssh/home_ed25519
-    DynamicForward 1083
-
-Host jupyter-mbp
-    HostName 240d:1a:2:5d00:192:168:1:2
-    User kazuki
-    IdentityFile ~/.ssh/home_ed25519
-    LocalForward 8888 localhost:8888
-
 Host mine
     HostName 203.178.135.156
     User gordon
     IdentityFile ~/.ssh/inl_rsa
 
 Host mgmg
-    #HostName 192.168.2.2
     HostName 192.168.1.50
     User kazuki
     Port 19222
@@ -64,87 +51,19 @@ Host mary
     User kazuki
     IdentityFile ~/.ssh/home_rsa
 
-# Keio
-Host keio
-    HostName logex00.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host keio01
-    HostName logex01.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host keio02
-    HostName logex02.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host fwd-keio
-    HostName logex00.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-    DynamicForward 1085
-
-Host login21
-    HostName login21.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login22
-    HostName login22.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login23
-    HostName login23.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login24
-    HostName login24.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login25
-    HostName login25.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login26
-    HostName login26.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login27
-    HostName login27.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login28
-    HostName login28.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login29
-    HostName login29.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
-Host login20
-    HostName login20.educ.cc.keio.ac.jp
-    User ua040762
-    IdentityFile ~/.ssh/inl_rsa
-
+Host fuzukue
+    Hostname 18.208.206.132
+    User ubuntu
+    IdentityFile ~/.ssh/aws.pem
 
 # ICS Root
-Host sw1
-    HostName sw1.ics.keio.ac.jp
+Host sw5
+    HostName sw5.ics.keio.ac.jp
     User manager
     ProxyCommand ssh -W %h:%p leopard-pc6
 
-Host sw5
-    HostName sw5.ics.keio.ac.jp
+Host sw5-backup
+    HostName sw5-backup.ics.keio.ac.jp
     User manager
     ProxyCommand ssh -W %h:%p leopard-pc6
 
@@ -160,24 +79,9 @@ Host leopard-pc6
     IdentityFile ~/.ssh/inl_rsa
     ProxyCommand ssh -W %h:%p pc6
 
-Host wolf
-    HostName wolf.ics.keio.ac.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host tiger
-    HostName tiger.ics.keio.ac.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
 Host ics-web
     HostName www.ics.keio.ac.jp
     User ubuntu
-    IdentityFile ~/.ssh/inl_rsa
-
-Host growi
-    HostName 18.188.195.107
-    User gordon
     IdentityFile ~/.ssh/inl_rsa
 
 Host recruit
@@ -185,181 +89,12 @@ Host recruit
     User ec2-user
     IdentityFile ~/.ssh/inl_rsa
 
-# Jump Servers
-Host imac
-    HostName g-imac.inl.ics.keio.ac.jp
-    User gordon
-    IdentityFile ~/.ssh/home_ed25519
-
-Host jupyter-imac
-    HostName g-imac.inl.ics.keio.ac.jp
-    User gordon
-    IdentityFile ~/.ssh/home_ed25519
-    LocalForward 8888 localhost:8888
-
-Host fwd-imac
-    HostName g-imac.inl.ics.keio.ac.jp
-    User gordon
-    IdentityFile ~/.ssh/home_ed25519
-    DynamicForward 1084
-
-Host imac-pc6
-    HostName g-imac.inl.ics.keio.ac.jp
-    User gordon
-    IdentityFile ~/.ssh/home_ed25519
-    ProxyCommand ssh -W %h:%p pc6
-
-# Experiment
-Host mano
-    HostName 131.113.71.157
+# INL
+Host bastion
+    HostName bastion.inl.ics.keio.ac.jp
     User gordon
     IdentityFile ~/.ssh/inl_rsa
 
-Host sizu1
-    HostName 131.113.71.241
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host sizu2
-    HostName 131.113.71.242
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host henry
-    HostName 131.113.71.181
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-
-Host simula
-    HostName simula.inl.ics.keio.ac.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-    ForwardAgent yes
-
-Host fwd-simula
-    HostName simula.inl.ics.keio.ac.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-    DynamicForward 1081
-
-Host pxe
-    HostName 131.113.71.196
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-
-Host reef
-    HostName reef.inl.ics.keio.ac.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p simula
-
-Host coral
-    HostName coral.inl.ics.keio.ac.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-
-Host coral14
-    HostName coral.inl.ics.keio.ac.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-
-Host jedi
-    HostName jedi.inl.ics.keio.ac.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-
-Host anakin
-    HostName anakin.inl.ics.keio.ac.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-
-Host libra
-    HostName libra.yagami.wide.ad.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-
-Host rinto
-    HostName rinto.inl.ics.keio.ac.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-
-Host d1
-    HostName 131.113.71.201
-    #HostName 2001:200:0:6811::d1
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host d2
-    HostName 131.113.71.202
-    #HostName 2001:200:0:6811::d2
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host d3
-    HostName 131.113.71.203
-    #HostName 2001:200:0:6811::d3
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host d4
-    HostName 131.113.71.204
-    #HostName 2001:200:0:6811::d4
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host d5
-    HostName 131.113.71.205
-    #HostName 2001:200:0:6811::d5
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host d6
-    HostName 131.113.71.206
-    #HostName 2001:200:0:6811::d6
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-# NEC
-Host nec
-    HostName nec-project.inl.ics.keio.ac.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host gw01
-    # ivory
-    HostName 172.20.1.1
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host gw02
-    # Matsutani
-    HostName 172.20.1.2
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p nec
-
-Host gw03
-    # Ohtsuki
-    HostName 172.20.1.3
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p nec
-
-Host gw04
-    # Amano
-    HostName 172.20.1.4
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p nec
-
-Host gw05
-    # Sugiura
-    HostName 172.20.1.5
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p nec
-
-# Service
 Host domino
     HostName domino.inl.ics.keio.ac.jp
     User gordon
@@ -382,11 +117,6 @@ Host fwd-cheese
     IdentityFile ~/.ssh/inl_rsa
     DynamicForward 1080
 
-Host tomato
-    HostName tomato.inl.ics.keio.ac.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
 Host wish
     HostName wish.inl.ics.keio.ac.jp
     User gordon
@@ -407,61 +137,16 @@ Host vpn
     User gordon
     IdentityFile ~/.ssh/inl_rsa
 
+Host vpn2
+    HostName 131.113.71.155
+    User gordon
+    IdentityFile ~/.ssh/inl_rsa
+
 Host dhcp
     HostName dhcp.inl.ics.keio.ac.jp
     User gordon
     IdentityFile ~/.ssh/inl_rsa
     ProxyCommand ssh -W %h:%p cheese
-
-Host prokiso
-    HostName 131.113.71.18
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-# Switch
-Host hayate
-    HostName 192.168.10.2
-    User admin
-    #IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -l gordon -W %h:%p pc6
-
-Host hayabusa
-    HostName 192.168.10.1
-    User admin
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -l gordon -W %h:%p pc6
-
-Host c2
-    HostName 192.168.10.7
-    User wide
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -l gordon -W %h:%p pc6
-
-Host c3
-    HostName 192.168.10.100
-    User wide
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -l gordon -W %h:%p pc6
-    #KexAlgorithms +diffie-hellman-group1-sha1
-    #Ciphers aes256-cbc
-
-Host j1
-    HostName juniper1.yagami.wide.ad.jp
-    User wide
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -l gordon -W %h:%p pc6
-
-Host f2
-    HostName foundry2.yagami.wide.ad.jp
-    User wide
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -l gordon -W %h:%p pc6
-
-Host f3
-    HostName foundry3.yagami.wide.ad.jp
-    User wide
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -l gordon -W %h:%p pc6
 
 # WIDE
 Host pc4
@@ -479,12 +164,6 @@ Host pc6
     User gordon
     IdentityFile ~/.ssh/inl_rsa
     ForwardAgent yes
-
-Host fwd-pc6
-    HostName pc6.yagami.wide.ad.jp
-    User gordon 
-    IdentityFile ~/.ssh/inl_rsa
-    DynamicForward 1082
 
 Host vtep1
     HostName vtep1.yagami.wide.ad.jp
@@ -541,210 +220,4 @@ Host lion.dojima
     HostName 2001:200:dff:fff1:216:3eff:fe44:f33a
     User gordon
     IdentityFile ~/.ssh/inl_rsa
-
-# Blade Servers
-Host blade-01
-    HostName blade-01.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
- 
-Host blade-02
-    HostName blade-02.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-03
-    HostName blade-03.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    
-Host blade-04
-    HostName blade-04.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-05
-    HostName blade-05.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    
-Host blade-06
-    HostName blade-06.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-07
-    HostName blade-07.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-08
-    HostName blade-08.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-09
-    HostName blade-09.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-10
-    HostName blade-10.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-11
-    HostName blade-11.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-12
-    HostName blade-12.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-13
-    HostName blade-13.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-14
-    HostName blade-14.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-15
-    HostName blade-15.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-16
-    HostName blade-16.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-17
-    HostName blade-17.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-18
-    HostName blade-18.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-19
-    HostName blade-19.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-20
-    HostName blade-20.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-21
-    HostName blade-21.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-22
-    HostName blade-22.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-23
-    HostName blade-23.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-Host blade-24
-    HostName blade-24.yagami.wide.ad.jp
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-
-# DMC
-Host oifrt1
-    HostName 10.58.60.16
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host oifrt2
-    HostName 10.58.60.17
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene01
-    HostName 10.58.60.1
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene02
-    HostName 10.58.60.2
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene03
-    HostName 10.58.60.3
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene04
-    HostName 10.58.60.4
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene05
-    HostName 10.58.60.5
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene06
-    HostName 10.58.60.6
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene07
-    HostName 10.58.60.7
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene08
-    HostName 10.58.60.8
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene09
-    HostName 10.58.60.9
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene10
-    HostName 10.58.60.10
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene11
-    HostName 10.58.60.11
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
-
-Host abilene12
-    HostName 10.58.60.12
-    User gordon
-    IdentityFile ~/.ssh/inl_rsa
-    ProxyCommand ssh -W %h:%p cheese
 

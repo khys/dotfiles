@@ -59,8 +59,7 @@ HEROKU_AC_BASH_SETUP_PATH=/Users/kazuki/Library/Caches/heroku/autocomplete/bash_
 # alias
 alias cp='cp -aip'
 alias mv='mv -i'
-alias wakeup-1f='wakeonlan 00:16:d3:dc:bb:3f'
-alias wakeup-2f='wakeonlan 00:17:42:fd:63:7d'
+alias wakeup='wakeonlan -i 10.0.0.2 3c:97:0e:14:08:88'
 alias v4mtr='sudo mtr -n 8.8.8.8'
 alias v6mtr='sudo mtr -n 2001:4860:4860::8888'
 
