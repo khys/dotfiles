@@ -5,7 +5,7 @@ AddKeysToAgent yes
 #ForwardAgent yes
 
 Host github.com
-    IdentityFile ~/.ssh/inl_rsa
+    IdentityFile ~/.ssh/home_ed25519
 
 Host sh.wide.ad.jp
     IdentityFile ~/.ssh/inl_rsa
